@@ -1,10 +1,13 @@
 let bars = document.querySelector("header .bars");
 let ul = document.querySelector(" header ul");
+let lis = ul.querySelectorAll("li");
 
-bars.onclick = function () {
-  this.classList.toggle("click");
-  ul.classList.toggle("click");
-};
+[...lis, bars].forEach((e) => {
+  e.addEventListener("click", () => {
+    bars.classList.toggle("click");
+    ul.classList.toggle("click");
+  });
+});
 
 function percentEffect() {
   let skill = document.querySelector(".skill .percent");
