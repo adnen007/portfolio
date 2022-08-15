@@ -144,12 +144,19 @@ header .container {
 }
 
 .logo {
-  font-family: "Pacifico", cursive;
-  font-size: 22px;
+  font-family: Pacifico, cursive;
+  font-size: 28px;
   color: var(--secondColor);
   position: absolute;
-  left: 20px;
-  top: 15px;
+  left: 24px;
+  top: 11px;
+}
+@media (min-width: 992px) {
+  .logo {
+    font-size: 40px;
+    left: 48px;
+    top: 0px;
+  }
 }
 
 header .bars {
@@ -251,7 +258,7 @@ header ul li:hover a {
   margin-top: 30px;
 }
 .section1 .image1 {
-  margin-top: 50px;
+  margin-top: 60px;
   display: flex;
   justify-content: center;
 }
@@ -259,11 +266,23 @@ header ul li:hover a {
   max-width: 67%;
   width: 220px;
 }
-.section1 .arrow-down {
+
+.section1 a.arrow-down {
   display: none;
-  font-size: 25px;
-  color: var(--secondColor);
-  animation: arrow-down 0.5s linear infinite;
+}
+
+@keyframes sdb {
+  0% {
+    transform: rotateZ(-45deg) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotateZ(-45deg) translate(-20px, 20px);
+    opacity: 0;
+  }
 }
 .section2 {
   margin-top: 120px;
@@ -291,12 +310,26 @@ header ul li:hover a {
   .section1 .image1 {
     margin-top: 40px;
   }
-  .section1 .arrow-down {
-    display: inline-block;
+  .section1 a.arrow-down {
+    padding-top: 70px;
+    display: block;
+    width: fit-content;
+    margin: auto;
+    margin-top: 30px;
+    position: relative;
+    width: 40px;
+  }
+  .section1 a.arrow-down span {
     position: absolute;
+    top: 0;
     left: 50%;
-    bottom: 35px;
-    transform: translateX(-50%);
+    margin-left: -12.5px;
+    width: 25px;
+    height: 25px;
+    border-left: 1px solid var(--secondColor);
+    border-bottom: 1px solid var(--secondColor);
+    transform: rotateZ(-45deg);
+    animation: sdb 1.5s infinite;
   }
 }
 @media (min-width: 992px) {
@@ -304,10 +337,14 @@ header ul li:hover a {
     padding-top: 50px;
   }
   .section1 h1 {
-    font-size: 35px;
+    font-size: 47px;
   }
   .section1 p {
-    font-size: 18px;
+    font-size: 20px;
+  }
+  .section1 .image1 img {
+    max-width: 67%;
+    width: 250px;
   }
 }
 
@@ -345,7 +382,7 @@ header ul li:hover a {
   margin-top: 80px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
+  gap: 40px;
 }
 .skill .image {
   display: flex;
@@ -354,6 +391,7 @@ header ul li:hover a {
 }
 .skill .image img {
   max-width: 100%;
+  width: 280px;
 }
 .skill .percent {
   display: flex;
@@ -433,7 +471,9 @@ header ul li:hover a {
   border: solid;
   position: relative;
   overflow: hidden;
+  position: relative;
 }
+
 .projects .content .box img {
   max-width: 100%;
   height: 100%;
@@ -442,6 +482,7 @@ header ul li:hover a {
 }
 .projects .content .box .link {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -449,7 +490,7 @@ header ul li:hover a {
   height: 100%;
   top: -100%;
   left: 50%;
-  background-color: #ffffff87;
+  background-color: hwb(0 100% 0% / 0.8);
   transform: translate(-50%, 0%);
   transition: 0.5s;
 }
@@ -457,11 +498,17 @@ header ul li:hover a {
   transform: translate(-50%, 100%);
 }
 .projects .content .box .link a {
+  display: block;
   text-decoration: none;
   color: rgb(6, 6, 139);
   font-size: 18;
   font-weight: 600;
   text-transform: uppercase;
+}
+.projects .content .box .link p {
+  margin-top: 15px;
+  font-weight: 600;
+  text-align: center;
 }
 
 .projects a.more {

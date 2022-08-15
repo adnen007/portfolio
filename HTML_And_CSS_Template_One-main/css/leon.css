@@ -197,7 +197,32 @@ body {
 }
 .landing .switch div:last-child {
   background: grey;
+  position: relative;
 }
+.landing .switch div:last-child::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border: solid;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: bob 1s 6;
+}
+@keyframes bob {
+  0% {
+    border-width: 3px;
+    border-color: black;
+  }
+  100% {
+    transform: translate(-50%, -50%);
+    border-width: 15px;
+    border-color: transparent;
+  }
+}
+
 .landing .intro-text {
   position: absolute;
   left: 50%;
