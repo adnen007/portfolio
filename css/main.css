@@ -472,6 +472,7 @@ header ul li:hover a {
   position: relative;
   overflow: hidden;
   position: relative;
+  background-color: white;
 }
 
 .projects .content .box img {
