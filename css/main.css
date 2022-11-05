@@ -491,9 +491,9 @@ header ul li:hover a {
   height: 100%;
   top: -100%;
   left: 50%;
-  background-color: hwb(0 100% 0% / 0.8);
+  background-color: hwb(0 100% 0% / 0.9);
   transform: translate(-50%, 0%);
-  transition: 0.5s;
+  transition: 0.4s;
 }
 .projects .content .box:hover .link {
   transform: translate(-50%, 100%);
@@ -512,16 +512,28 @@ header ul li:hover a {
   text-align: center;
 }
 
-.projects a.more {
-  display: block;
-  text-decoration: none;
+.projects .more-content {
+  margin-top: 50px;
+  font-size: 2px;
+  color: white;
+  overflow: hidden;
+  height: 0px;
+  transition: 0.5s;
+}
+.projects .more-content.show {
+  height: 100%;
+  font-size: 23px;
+}
+.projects button.more {
   font-size: 18px;
-  color: var(--fourthColor);
+  color: white;
+  background-color: transparent;
   padding: 7px 16px;
-  border: 2px var(--fourthColor) solid;
+  border: 2px white solid;
   margin-top: 50px;
   font-weight: 500;
-  border-radius: 20%;
+  border-radius: 10px;
+  cursor: pointer;
 }
 /* end projects */
 

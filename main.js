@@ -1,3 +1,4 @@
+// bars effects
 let bars = document.querySelector("header .bars");
 let ul = document.querySelector(" header ul");
 let lis = ul.querySelectorAll("li");
@@ -8,7 +9,7 @@ let lis = ul.querySelectorAll("li");
     ul.classList.toggle("click");
   });
 });
-
+// percent-skills effects
 function percentEffect() {
   let skill = document.querySelector(".skill .percent");
   let spans = document.querySelectorAll(".skill ul li .right span");
@@ -22,9 +23,17 @@ function percentEffect() {
 }
 document.addEventListener("scroll", percentEffect);
 
-let obj = { user: "Adnen" };
+// tempery solution to the links
 
-function print({ user }) {
-  console.log(user);
-}
-print(obj);
+let links = document.querySelectorAll(".box .link");
+
+links.forEach((link) => (link.onclick = () => link.querySelector(" a").click()));
+
+// more-button
+
+const moreBtn = document.querySelector(".projects button.more");
+const moreContent = document.querySelector(".projects .more-content");
+moreBtn.onclick = function () {
+  moreContent.classList.toggle("show");
+  moreBtn.textContent = moreBtn.textContent === "LESS" ? "MORE" : "LESS";
+};
