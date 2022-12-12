@@ -509,7 +509,7 @@ header ul li:hover a {
   height: 100%;
   top: -100%;
   left: 50%;
-  background-color: hwb(0 100% 0% / 0.9);
+  background-color: #ffffffe6;
   transform: translate(-50%, 0%);
   transition: 0.4s;
 }
