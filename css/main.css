@@ -447,7 +447,7 @@ header ul li:hover a {
 
 @media (min-width: 992px) {
   .skill .percent ul li .right span::after {
-    content: attr(data-percent);
+   /* content: attr(data-percent);*/
     position: absolute;
     right: 2px;
     top: 50%;
